@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+	<context-param>
+		<param-name>emailAdresWebMaster</param-name>
+		<param-value>joske.vermeulen@vdab.be</param-value>
+	</context-param>
+	<session-config>
+		<session-timeout>20</session-timeout>
+		<tracking-mode>COOKIE</tracking-mode>
+	</session-config>
+	<error-page>
+		<error-code>404</error-code>
+		<location>/WEB-INF/JSP/404.jsp</location>
+	</error-page>
+	<error-page>
+		<exception-type>be.vdab.repositories.RepositoryException</exception-type>
+		<location>/WEB-INF/JSP/repositoryexception.jsp</location>
+	</error-page>
+	<servlet>
+		<servlet-name>IndexServlet</servlet-name>
+		<servlet-class>be.vdab.servlets.IndexServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>IndexServlet</servlet-name>
+		<url-pattern>/index.htm</url-pattern>
+	</servlet-mapping>
+	<listener>
+		<listener-class>be.vdab.listeners.MandjeListener</listener-class>
+	</listener>
+	<filter>
+		<filter-name>ServletFilter</filter-name>
+		<filter-class>be.vdab.filters.ServletFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>ServletFilter</filter-name>
+		<url-pattern>*.htm</url-pattern>
+	</filter-mapping>
+</web-app>

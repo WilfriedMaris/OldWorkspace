@@ -1,0 +1,52 @@
+body{
+	background-color: lightCyan;
+}
+
+tr:nth-child(odd) {
+    background-color: LightSteelBlue;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul.fout{
+	display: block;
+    list-style-type: square;
+    margin-top: 1em;
+    margin-bottom: 1 em;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 40px;
+    color: red;
+}
+
+li.menu { 
+ 	display: inline; 
+ } 
+
+dd {
+	font-weight: bold;
+	padding-bottom: 0.7em;
+}
+
+input{
+    display: block;
+}
+
+input.submitknop{
+	margin-top: 10px;
+    display: block;
+    width: 8em;  height: 1.7em;
+}
+
+label{
+	display: block;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+table{
+	margin-top:1em;
+}
